@@ -42,12 +42,6 @@ const StyledBox = styled(Flex)`
     width: 100%;
     font-size: 16px;
   }
-  &>ul>li:first-child>a{
-    font-size: 18px;
-  }
-  &>ul>li:first-child{
-    margin-right: 40px;
-  }
 `
 
 const Footer = ({ query }) => {

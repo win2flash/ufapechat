@@ -251,12 +251,22 @@ const theme = {
             color: 'primary',
           },
         },
+        // '&.menu_1': {
+        //   display: 'grid',
+        //   gridTemplate: 'repeat(auto-fit,minmax(40px,1fr)) /repeat(2, 1fr)',
+        //   gridAutoRows: '100%',
+        // },
+        // '&.menu_1 li': {
+        //   gridColumn: '1/2',
+        // },
+        // '&.menu_1 li:nth-last-child(-n+4)': {
+        //   gridColumn: '2/3',
+        // },
+
         '&.menu_1': {
           display: 'grid',
-          gridTemplate: 'repeat(3, 1fr) auto /1fr 1fr 1fr',
+          gridTemplate: 'repeat(3, 1fr) /1fr 1fr 1fr',
           gridAutoRows: '100%',
-        },
-        '&.menu_1>li:first-child>a': {
         },
         '&.menu_2': {
           display: 'flex',
@@ -267,18 +277,26 @@ const theme = {
           gridTemplate: '1fr/1fr 1fr',
           gap: '10px',
         },
-
-        '&.menu_3 li a': {
-          padding: 0,
-          fontSize: [1, 1, 2],
-        },
         '&.menu_1>li': {
           alignSelf: 'start',
         },
-        '&.menu_1>li:first-child': {
-          gridRow: '1 / 6',
-          gridColumn: '1/3',
-        }
+        '&.menu_1 li:nth-last-child(4)': {
+          gridColumn: '3/4',
+          gridRow: '1/2',
+        },
+        '&.menu_1 li:nth-last-child(3)': {
+          gridColumn: '3/4',
+          gridRow: '2/3',
+        },
+        '&.menu_1 li:nth-last-child(2)': {
+          gridColumn: '3/4',
+          gridRow: '3/4',
+        },
+        '&.menu_1 li:last-child': {
+          gridColumn: '3/4',
+          gridRow: '4/5',
+        },
+
       },
     },
 

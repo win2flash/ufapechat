@@ -33,7 +33,7 @@ const Menu = ({ query, location = 'header', themeVariant, nest }) => {
       <Box as="ul" variant={themeVariant} className={`menu_${menuIndex}`}>
         {items.map(item => (
           <li key={item.id}>
-            <RebassLink sx={{ py: ['5px', '8px', '12px'], px: ['5px', '8px', '10px'] }} href={item.url}>{item.label}</RebassLink>
+            <RebassLink sx={{ py: ['6px', '6px', '8px'], px: ['4px', '4px', '6px'] }} href={item.url}>{item.label}</RebassLink>
             {item.children.length > 0 && <Menu items={item.children} menuIndex={menuIndex} nesting={nesting} />}
           </li>
         ))}
