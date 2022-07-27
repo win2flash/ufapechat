@@ -28,7 +28,22 @@ const Menu = ({ query, location = 'header', themeVariant, nest }) => {
 
   const Menu = ({ items, menuIndex = 0, nesting }) => {
     ++menuIndex
-    if (menuIndex >= nesting) return ''
+    if (menuIndex > nesting) return ''
+
+    if (menuIndex === 2) return (
+      <Box as="ul" variant={themeVariant} className={`menu_${menuIndex}`}>
+        {items.map(item => (
+          <>
+            <li key={item.id}>
+              <RebassLink sx={{ py: ['6px', '6px', '8px'], px: ['4px', '4px', '6px'] }} href={item.url}>{item.label}</RebassLink>
+            </li>
+            {item.children.length > 0 && <Menu items={item.children} menuIndex={menuIndex} nesting={nesting} />}
+          </>
+        ))}
+      </Box>
+
+    )
+
     return (
       <Box as="ul" variant={themeVariant} className={`menu_${menuIndex}`}>
         {items.map(item => (
