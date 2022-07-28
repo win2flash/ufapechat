@@ -7,11 +7,11 @@ import Layout from "../components/layout"
 import Container from '../components/container'
 import Seo from "../components/seo"
 import ButtonAnimated from '../components/UI/buttonAnimated'
-
+import Contacts from '../components/mainpage/contacts'
 
 
 const PageTemplate = ({ data: { page } }) => {
-  
+  console.dir(page)
   return (
     <Layout>
       <Seo title={page.seo?.title} description={page.seo?.metaDesc} />
@@ -20,16 +20,17 @@ const PageTemplate = ({ data: { page } }) => {
           <Heading variant='heading' color='primary' as='h1'>{parse(page.title)}</Heading>
         </Flex>
         {page.wpChildren.nodes.length !== 0 &&
-          <Flex width="100%" flexWrap='wrap' justifyContent={['center','center','start']}  mx={[-2, -2, -2]} my={4}>
-            {page?.wpChildren.nodes.map(elem => (
-              <ButtonAnimated key={elem.id} title={elem.title} link={elem.link}/>
+          <Box width="100%" sx={{display:"grid", gridTemplate:"repeat(3, 1fr)/repeat(4, 1fr)", gap:'10px'}}  my={4}>
+            {page?.wpChildren.nodes.map(elem => (     
+                <ButtonAnimated key={elem.id} title={elem.title} link={elem.link}/>
             ))}
-          </Flex>
+          </Box>
         }
         <Box sx={{ width: ['100%'] }}>
           {page.content && parse(page.content)} 
-        </Box>
-      </Container>      
+        </Box>        
+      </Container> 
+      <Contacts />     
     </Layout>    
   )
 }

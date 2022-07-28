@@ -204,7 +204,6 @@ const theme = {
           top: '100%',
           opacity: 0,
           visibility: 'hidden',
-          backgroundColor: 'primary',
           display: 'grid',
           gridAutoRows: '1fr',
           gridTemplate: 'repeat(3,1fr) / 1fr auto',
@@ -416,9 +415,7 @@ const theme = {
     pageSubMenu: {
       justifyContent: 'center',
       alignItems: 'center',
-      width: '33%',
-      my: 1,
-      px: [2, 2, 2],
+      width: '100%',
       div: {
         fleDirection: 'column',
         justifyContent: 'center',

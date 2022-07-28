@@ -33,12 +33,12 @@ const Menu = ({ query, location = 'header', themeVariant, nest }) => {
     if (menuIndex === 2) return (
       <Box as="ul" variant={themeVariant} className={`menu_${menuIndex}`}>
         {items.map(item => (
-          <>
-            <li key={item.id}>
+          <React.Fragment key={item.id}>
+            <li >
               <RebassLink sx={{ py: ['6px', '6px', '8px'], px: ['4px', '4px', '6px'] }} href={item.url}>{item.label}</RebassLink>
             </li>
             {item.children.length > 0 && <Menu items={item.children} menuIndex={menuIndex} nesting={nesting} />}
-          </>
+          </React.Fragment>
         ))}
       </Box>
 
