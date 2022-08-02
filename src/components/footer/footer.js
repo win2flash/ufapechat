@@ -1,44 +1,37 @@
-import React from 'react'
-import { Flex, Heading, Link, Box } from "rebass/styled-components";
+import React from "react"
+import { Flex, Heading, Link, Box } from "rebass/styled-components"
 import styled from "styled-components"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faPhone,
-  faAt,
-} from '@fortawesome/free-solid-svg-icons'
-import {
-  faVk,
-  faInstagram
-} from "@fortawesome/free-brands-svg-icons"
-import Menu from '../UI/menu'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPhone, faAt } from "@fortawesome/free-solid-svg-icons"
+import { faVk, faInstagram } from "@fortawesome/free-brands-svg-icons"
+import Menu from "../UI/menu"
 
 const StyledFA = styled(FontAwesomeIcon)`
-  color:#D7D9F4;
-  transition: all .3s ease;
-  margin-right:8px;
+  color: #d7d9f4;
+  transition: all 0.3s ease;
+  margin-right: 8px;
 `
-const StyledFooter = styled(Box)`
-`
+const StyledFooter = styled(Box)``
 const StyledContact = styled(Box)`
-  &:hover svg{
-    color:#2E9CCA;
+  &:hover svg {
+    color: #2e9cca;
   }
 `
 const StyledBox = styled(Flex)`
   justify-content: space-between;
   max-width: 1100px;
-  & li a{
+  & li a {
     line-height: 1.2;
     text-align: center;
   }
-  & li{
+  & li {
     font-weight: 700;
     list-style: none;
     position: relative;
     display: block;
     text-align: center;
-  }  
-  &>ul>li>a{
+  }
+  & > ul > li > a {
     width: 100%;
     font-size: 16px;
   }
@@ -46,18 +39,42 @@ const StyledBox = styled(Flex)`
 
 const Footer = ({ query }) => {
   const settings = query.wp.generalSettings.mainSettings
-  const [phones, email, vk, insta] = [settings.phones, settings.email, settings.linkVk, settings.linkInstagram]
+  const [phones, email, vk, insta] = [
+    settings.phones,
+    settings.email,
+    settings.linkVk,
+    settings.linkInstagram,
+  ]
 
   return (
-    <StyledFooter as="footer" backgroundColor='primary'>
-      <StyledBox as="nav" variant="nav" sx={{ maxWidth: '1100px', mx: 'auto', backgroundColor: 'primary', px: [2, 3, 4], py: [2, 3, 4] }}>
-        <Menu query={query} location="footer" themeVariant={'menu.bottomMenu'} nest={3} />
-        <Flex sx={{ flexDirection: 'column', div: { mb: [1, 2, 2] } }}>
-          <Heading sx={{
-            display: 'inline-block',
-            fontSize: [1, 2, '18px'],
-            mb: [1, 2, 3]
-          }}>Контактная информация</Heading>
+    <StyledFooter as="footer" backgroundColor="primary">
+      <StyledBox
+        as="nav"
+        variant="nav"
+        sx={{
+          maxWidth: "1100px",
+          mx: "auto",
+          backgroundColor: "primary",
+          px: [2, 3, 4],
+          py: [2, 3, 4],
+        }}
+      >
+        <Menu
+          query={query}
+          location="footer"
+          themeVariant={"menu.bottomMenu"}
+          nest={3}
+        />
+        <Flex sx={{ flexDirection: "column", div: { mb: [1, 2, 2] } }}>
+          <Heading
+            sx={{
+              display: "inline-block",
+              fontSize: [1, 2, "18px"],
+              mb: [1, 2, 3],
+            }}
+          >
+            Контактная информация
+          </Heading>
           <StyledContact>
             <Link variant="link.footerLink" href={"tel:" + phones.phoneNumber1}>
               <StyledFA icon={faPhone} size="1x" />
@@ -101,5 +118,3 @@ const Footer = ({ query }) => {
 }
 
 export default Footer
-
-
