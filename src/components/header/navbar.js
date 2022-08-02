@@ -24,7 +24,7 @@ const StyledBottomHeader = styled.div`
 `
 
 const Navbar = ({ query }) => {
-  const [position, setPosition] = useState(window.pageYOffset)
+  const [position, setPosition] = useState(0)
   const [visible, setVisible] = useState(true)
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +44,7 @@ const Navbar = ({ query }) => {
     <StyledWrapper isHide={isHide}>
       <StyledBottomHeader>
         <Box as="nav" variant="nav">
-          <Menu query={query} themeVariant="menu.topMenu" nest={3} />
+          {/*<Menu query={query} themeVariant="menu.topMenu" nest={3} />*/}
         </Box>
       </StyledBottomHeader>
     </StyledWrapper>
